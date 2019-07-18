@@ -1,9 +1,15 @@
-package pages;
+package pages.sberPages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.BasePage;
 
-public class RegistrationPage extends BasePage{
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class RegistrationPage extends BasePage {
 
     @FindBy(xpath = "//input[@name='insured0_surname']")
     private WebElement ownerSurname;
@@ -21,17 +27,47 @@ public class RegistrationPage extends BasePage{
     private WebElement targerBday;
     @FindBy(xpath = "//input[@name='male']")
     private WebElement targerSexMale;
-    @FindBy(xpath = "//input[@placeholder='РЎРµСЂРёСЏ']")
+    @FindBy(xpath = "//input[@placeholder='Серия']")
     private WebElement targerPaspSer;
-    @FindBy(xpath = "//input[@placeholder='РќРѕРјРµСЂ']")
+    @FindBy(xpath = "//input[@placeholder='Номер']")
     private WebElement targerPaspNum;
     @FindBy(xpath = "//input[@name='issueDate']")
     private WebElement targetPaspDay;
     @FindBy(xpath = "//*[@ng-click='save()']")
     private WebElement continueButton;
+    @FindBy(xpath = "//div[@ng-show='tryNext && myForm.$invalid']")
+    private WebElement errorMessage;
+
+    public List<String> getTextToInputs(){
+        return  Arrays.asList("Ivan", "Ivanov", "14.05.1994", "Шультц", "Андрей", "Петрович", "12.09.1999", "1234", "567890", "12.10.2013");
+    }
+
+    public List<WebElement> getNesesseryElements(){
+        List<WebElement> list = new ArrayList<>();
+        list.add(ownerSurname);
+        list.add(ownerName);
+        list.add(ownerBday);
+        list.add(targerSurname);
+        list.add(targerName);
+        list.add(targerMiddleName);
+        list.add(targerBday);
+        list.add(targerPaspSer);
+        list.add(targerPaspNum);
+        list.add(targetPaspDay);
+        return list;
+    }
+    /*public String nesesseryElementsSequence(){
+        for(WebElement element : getNesesseryElements()){
+            System.out.println(element.);
+        }
+    }*/
 
     public WebElement getContinueButton() {
         return continueButton;
+    }
+
+    public void clickContinueButton(){
+        elemClick(getContinueButton());
     }
 
     public WebElement getOwnerSurname() {
@@ -76,6 +112,13 @@ public class RegistrationPage extends BasePage{
 
     public WebElement getTargetPaspDay() {
         return targetPaspDay;
+    }
+
+    public WebElement getErrorMessage() {
+        return errorMessage;
+    }
+    public void assertErrorMessage(){
+        Assert.assertEquals("\nНет сообщения","Заполнены не все обязательные поля", getErrorMessage().getText());
     }
 }
 
