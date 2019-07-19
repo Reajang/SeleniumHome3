@@ -1,5 +1,7 @@
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebElement;
 import pages.DriverManager;
@@ -12,15 +14,9 @@ import java.util.List;
 public class SberTest {
 
 
-
-    /*@AfterClass
-    public static void afterTest() {
-        DriverManager.closePages();
-        DriverManager.getDriver().quit();
-    }*/
-
-
     @Test
+    @DisplayName("Тест Сбербанк")
+    @Description("Задание 2")
     public void sberTest() {
 
 

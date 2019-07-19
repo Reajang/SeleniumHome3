@@ -1,4 +1,6 @@
+import io.qameta.allure.Description;
 import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebElement;
 import pages.DriverManager;
@@ -17,9 +19,9 @@ public class RgsTest {
     }
 
     @Test
+    @DisplayName("Тест Росгосстрах")
+    @Description("Задание 1")
     public void rgsTest(){
-
-
 
         MainRgsPage mainRgsPage = new MainRgsPage();
         mainRgsPage.clickInsurance();
@@ -47,15 +49,8 @@ public class RgsTest {
         dmsRequestPage.checkEmailError();
         dmsRequestPage.fillEmail("trainee@aplana.ru");
 
-        /*DriverManager.closePages();
-        DriverManager.getDriver().quit();*/
+
     }
 
-    /*@AfterClass
-    public static void after(){
-
-        DriverManager.closePages();
-        DriverManager.getDriver().quit();
-    }*/
 
 }
