@@ -12,15 +12,15 @@ import java.util.List;
 
 public class RgsTest {
 
-    @Step("Перейти по сслылке http://www.rgs.ru")
+    @Step("РџРµСЂРµР№С‚Рё РїРѕ СЃСЃР»С‹Р»РєРµ http://www.rgs.ru")
     @BeforeClass
     public static void initRsg(){
         DriverManager.initialDriver("https://www.rgs.ru");
     }
 
     @Test
-    @DisplayName("Тест Росгосстрах")
-    @Description("Задание 1")
+    @DisplayName("РўРµСЃС‚ Р РѕСЃРіРѕСЃСЃС‚СЂР°С…")
+    @Description("Р—Р°РґР°РЅРёРµ 1")
     public void rgsTest(){
 
         MainRgsPage mainRgsPage = new MainRgsPage();
@@ -40,7 +40,7 @@ public class RgsTest {
 
         dmsRequestPage.fillFields(textToInput, necessaryFields);
         dmsRequestPage.fillSelect(dmsRequestPage.getRegions(), 1);
-        Assert.assertEquals("77", dmsRequestPage.getRegions().get(1).getAttribute("value"));//Нужно вынести в отдельный метод
+        Assert.assertEquals("77", dmsRequestPage.getRegions().get(1).getAttribute("value"));//РќСѓР¶РЅРѕ РІС‹РЅРµСЃС‚Рё РІ РѕС‚РґРµР»СЊРЅС‹Р№ РјРµС‚РѕРґ
         dmsRequestPage.assertData(textToCheck, necessaryFields);
 
         dmsRequestPage.clickAgree();

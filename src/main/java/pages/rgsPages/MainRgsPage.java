@@ -6,15 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 
 public class MainRgsPage extends BasePage {
-    @FindBy(xpath = "//*[contains(text(), 'Страхование')]")
+    @FindBy(xpath = "//*[contains(text(), 'РЎС‚СЂР°С…РѕРІР°РЅРёРµ')]")
     private WebElement insurance;
-    @FindBy(xpath = "//*[contains(text(), 'ДМС')]")
+    @FindBy(xpath = "//*[contains(text(), 'Р”РњРЎ')]")
     private WebElement dms;
-    @Step("Выбрать пункт меню -Страхование")
+    @Step("Р’С‹Р±СЂР°С‚СЊ РїСѓРЅРєС‚ РјРµРЅСЋ - РЎС‚СЂР°С…РѕРІР°РЅРёРµ")
     public void clickInsurance(){
         elemClick(insurance);
     }
-    @Step("Выбрать категорию -ДМС")
+    @Step("Р’С‹Р±СЂР°С‚СЊ РєР°С‚РµРіРѕСЂРёСЋ -Р”РњРЎ")
     public void clickDms(){
         elemClick(dms);
     }

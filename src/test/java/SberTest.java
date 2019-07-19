@@ -15,8 +15,8 @@ public class SberTest {
 
 
     @Test
-    @DisplayName("Тест Сбербанк")
-    @Description("Задание 2")
+    @DisplayName("РўРµСЃС‚ РЎР±РµСЂР±Р°РЅРє")
+    @Description("Р—Р°РґР°РЅРёРµ 2")
     public void sberTest() {
 
 
@@ -53,7 +53,7 @@ public class SberTest {
 
     }
 
-    @Step("Перейти на страницу http://www.sberbank.ru/ru/person")
+    @Step("РџРµСЂРµР№С‚Рё РЅР° СЃС‚СЂР°РЅРёС†Сѓ http://www.sberbank.ru/ru/person")
     @Before
     public void initWeb() {
         DriverManager.initialDriver("http://www.sberbank.ru/ru/person");

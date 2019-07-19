@@ -28,9 +28,9 @@ public class RegistrationPage extends BasePage {
     private WebElement targerBday;
     @FindBy(xpath = "//input[@name='male']")
     private WebElement targerSexMale;
-    @FindBy(xpath = "//input[@placeholder='Серия']")
+    @FindBy(xpath = "//input[@placeholder='РЎРµСЂРёСЏ']")
     private WebElement targerPaspSer;
-    @FindBy(xpath = "//input[@placeholder='Номер']")
+    @FindBy(xpath = "//input[@placeholder='РќРѕРјРµСЂ']")
     private WebElement targerPaspNum;
     @FindBy(xpath = "//input[@name='issueDate']")
     private WebElement targetPaspDay;
@@ -40,7 +40,7 @@ public class RegistrationPage extends BasePage {
     private WebElement errorMessage;
 
     public List<String> getTextToInputs(){
-        return  Arrays.asList("Ivan", "Ivanov", "14.05.1994", "Шультц", "Андрей", "Петрович", "28.09.1999", "1234", "567890", "12.10.2013");
+        return  Arrays.asList("Ivan", "Ivanov", "14.05.1994", "РЁСѓР»СЊС‚С†", "РђРЅРґСЂРµР№", "РџРµС‚СЂРѕРІРёС‡", "28.09.1999", "1234", "567890", "12.10.2013");
     }
 
     public List<WebElement> getNesesseryElements(){
@@ -66,7 +66,7 @@ public class RegistrationPage extends BasePage {
     public WebElement getContinueButton() {
         return continueButton;
     }
-    @Step("Нажать продолжить")
+    @Step("РќР°Р¶Р°С‚СЊ РїСЂРѕРґРѕР»Р¶РёС‚СЊ")
     public void clickContinueButton(){
         elemClick(getContinueButton());
     }
@@ -118,9 +118,9 @@ public class RegistrationPage extends BasePage {
     public WebElement getErrorMessage() {
         return errorMessage;
     }
-    @Step("Проверить, что появилось сообщение - Заполнены не все обязательные поля")
+    @Step("РџСЂРѕРІРµСЂРёС‚СЊ, С‡С‚Рѕ РїРѕСЏРІРёР»РѕСЃСЊ СЃРѕРѕР±С‰РµРЅРёРµ - Р—Р°РїРѕР»РЅРµРЅС‹ РЅРµ РІСЃРµ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹Рµ РїРѕР»СЏ")
     public void assertErrorMessage(){
-        Assert.assertEquals("\nНет сообщения","Заполнены не все обязательные поля", getErrorMessage().getText());
+        Assert.assertEquals("\nРќРµС‚ СЃРѕРѕР±С‰РµРЅРёСЏ","Р—Р°РїРѕР»РЅРµРЅС‹ РЅРµ РІСЃРµ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹Рµ РїРѕР»СЏ", getErrorMessage().getText());
     }
 }
 

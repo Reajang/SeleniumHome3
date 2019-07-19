@@ -16,27 +16,27 @@ public class DmsRequestPage  extends BasePage {
     private WebElement requestForm;
     @FindBy(xpath = "//*[@class='modal-title']")
     private WebElement requestFormTitle;
-    @FindBy(xpath = "//*[text()= 'Имя']/following::input[1]")
+    @FindBy(xpath = "//*[text()= 'РРјСЏ']/following::input[1]")
     private WebElement name;
-    @FindBy(xpath = "//*[text()= 'Фамилия']/following::input[1]")
+    @FindBy(xpath = "//*[text()= 'Р¤Р°РјРёР»РёСЏ']/following::input[1]")
     private WebElement surName;
-    @FindBy(xpath = "//*[text()= 'Отчество']/following::input[1]")
+    @FindBy(xpath = "//*[text()= 'РћС‚С‡РµСЃС‚РІРѕ']/following::input[1]")
     private WebElement middleName;
-    @FindBy(xpath = "//*[text()= 'Телефон']/following::input[1]")
+    @FindBy(xpath = "//*[text()= 'РўРµР»РµС„РѕРЅ']/following::input[1]")
     private WebElement phoneNumner;
-    @FindBy(xpath = "//*[text()= 'Эл. почта']/following::input[1]")
+    @FindBy(xpath = "//*[text()= 'Р­Р». РїРѕС‡С‚Р°']/following::input[1]")
     private WebElement email;
-    @FindBy(xpath = "//*[text()= 'Предпочитаемая дата контакта']/following::input[1]")
+    @FindBy(xpath = "//*[text()= 'РџСЂРµРґРїРѕС‡РёС‚Р°РµРјР°СЏ РґР°С‚Р° РєРѕРЅС‚Р°РєС‚Р°']/following::input[1]")
     private WebElement dayToColl;
-    @FindBy(xpath = "//*[contains(text(),'Регион')]/following::option")
+    @FindBy(xpath = "//*[contains(text(),'Р РµРіРёРѕРЅ')]/following::option")
     private List<WebElement> regions;
     @FindBy(xpath = "//*[@name= 'Comment']")
     private WebElement comments;
-    @FindBy(xpath = "//*[contains(text(),'Я согласен')]/preceding-sibling::input")
+    @FindBy(xpath = "//*[contains(text(),'РЇ СЃРѕРіР»Р°СЃРµРЅ')]/preceding-sibling::input")
     private WebElement agree;
     @FindBy(xpath = "//*[@id='button-m']")
     private WebElement sendButton;
-    @FindBy(xpath = "//*[text()='Эл. почта']//following::label[1]")
+    @FindBy(xpath = "//*[text()='Р­Р». РїРѕС‡С‚Р°']//following::label[1]")
     private WebElement emailError;
 
     public WebElement getFormTitleText(){
@@ -45,20 +45,20 @@ public class DmsRequestPage  extends BasePage {
     public void clickAgree(){
         agree.click();
     }
-    @Step("Нажать отправить")
+    @Step("РќР°Р¶Р°С‚СЊ РѕС‚РїСЂР°РІРёС‚СЊ")
     public void clickSendButton(){
         sendButton.click();
     }
-    @Step("Ошибка в email")
+    @Step("РћС€РёР±РєР° РІ email")
     public void checkEmailError(){
-        assertData(" Введите адрес электронной почты", emailError);
+        assertData(" Р’РІРµРґРёС‚Рµ Р°РґСЂРµСЃ СЌР»РµРєС‚СЂРѕРЅРЅРѕР№ РїРѕС‡С‚С‹", emailError);
     }
     public void fillEmail(String string){
         email.clear();
         fillText(email, string);
     }
 
-    //НУжно как-то вынести в BasePage
+    //РќРЈР¶РЅРѕ РєР°Рє-С‚Рѕ РІС‹РЅРµСЃС‚Рё РІ BasePage
     public List<WebElement> getNesesseryElements(){
         List<WebElement> list = new ArrayList<>();
         list.add(name);
@@ -72,19 +72,19 @@ public class DmsRequestPage  extends BasePage {
         return list;
     }
     public List<String> getTextToInputs(){
-        return  Arrays.asList("Иван", "Сидоров", "Андреевич", "8005553535", "qwertyqwerty", "19072019", "Комментарий");
+        return  Arrays.asList("РРІР°РЅ", "РЎРёРґРѕСЂРѕРІ", "РђРЅРґСЂРµРµРІРёС‡", "8005553535", "qwertyqwerty", "19072019", "РљРѕРјРјРµРЅС‚Р°СЂРёР№");
     }
     public List<String> getTextToCheck(){
-        return  Arrays.asList("Иван", "Сидоров", "Андреевич", "+7 (800) 555-35-35", "qwertyqwerty", "19.07.2019", "Комментарий");
+        return  Arrays.asList("РРІР°РЅ", "РЎРёРґРѕСЂРѕРІ", "РђРЅРґСЂРµРµРІРёС‡", "+7 (800) 555-35-35", "qwertyqwerty", "19.07.2019", "РљРѕРјРјРµРЅС‚Р°СЂРёР№");
     }
 
     public List<WebElement> getRegions() {
         return regions;
     }
-    @Step("Проверить, что открылась страница, " +
-            "на которой присутствует текст: " +
-            "Заявка на добровольное медицинское страхование")
+    @Step("РџСЂРѕРІРµСЂРёС‚СЊ, С‡С‚Рѕ РѕС‚РєСЂС‹Р»Р°СЃСЊ СЃС‚СЂР°РЅРёС†Р°, " +
+            "РЅР° РєРѕС‚РѕСЂРѕР№ РїСЂРёСЃСѓС‚СЃС‚РІСѓРµС‚ С‚РµРєСЃС‚: " +
+            "Р—Р°СЏРІРєР° РЅР° РґРѕР±СЂРѕРІРѕР»СЊРЅРѕРµ РјРµРґРёС†РёРЅСЃРєРѕРµ СЃС‚СЂР°С…РѕРІР°РЅРёРµ")
     public void checkFormTitle(){
-        assertData("Заявка на добровольное медицинское страхование", getFormTitleText());
+        assertData("Р—Р°СЏРІРєР° РЅР° РґРѕР±СЂРѕРІРѕР»СЊРЅРѕРµ РјРµРґРёС†РёРЅСЃРєРѕРµ СЃС‚СЂР°С…РѕРІР°РЅРёРµ", getFormTitleText());
     }
 }

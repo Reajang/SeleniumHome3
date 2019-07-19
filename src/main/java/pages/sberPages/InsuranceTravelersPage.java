@@ -8,17 +8,17 @@ import pages.BasePage;
 public class InsuranceTravelersPage extends BasePage {
 
 
-    @FindBy(xpath = "//div[contains(text(), 'Минимальная')]/..")
+    @FindBy(xpath = "//div[contains(text(), 'РњРёРЅРёРјР°Р»СЊРЅР°СЏ')]/..")
     private WebElement buttonMin;
-    @FindBy(xpath = "//span[contains(text(), 'Оформить')]/../..")
+    @FindBy(xpath = "//span[contains(text(), 'РћС„РѕСЂРјРёС‚СЊ')]/../..")
     private WebElement issue;
 
-    @Step("На вкладке – Выбор полиса  выбрать сумму страховой защиты – Минимальная")
+    @Step("РќР° РІРєР»Р°РґРєРµ вЂ“ Р’С‹Р±РѕСЂ РїРѕР»РёСЃР°  РІС‹Р±СЂР°С‚СЊ СЃСѓРјРјСѓ СЃС‚СЂР°С…РѕРІРѕР№ Р·Р°С‰РёС‚С‹ вЂ“ РњРёРЅРёРјР°Р»СЊРЅР°СЏ")
     public void clickButtonBin() {
         elemClick(buttonMin);
     }
 
-    @Step("Нажать Оформить")
+    @Step("РќР°Р¶Р°С‚СЊ РћС„РѕСЂРјРёС‚СЊ")
     public void clickIssue() {
         elemClick(issue);
     }

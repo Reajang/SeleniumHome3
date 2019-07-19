@@ -9,21 +9,21 @@ import pages.BasePage;
 public class SberPersonPage extends BasePage {
 
 
-    @FindBy(xpath = "//span[contains(text(), 'Страхование')]/parent::*")
+    @FindBy(xpath = "//span[contains(text(), 'РЎС‚СЂР°С…РѕРІР°РЅРёРµ')]/parent::*")
     private WebElement mainPage;
-    @FindBy(xpath = "//span[contains(text(), 'Страхование')]/parent::*/following::*[contains(text(), 'Путешествия и покупки')][1]")
+    @FindBy(xpath = "//span[contains(text(), 'РЎС‚СЂР°С…РѕРІР°РЅРёРµ')]/parent::*/following::*[contains(text(), 'РџСѓС‚РµС€РµСЃС‚РІРёСЏ Рё РїРѕРєСѓРїРєРё')][1]")
     private WebElement travel;
-    @FindBy(xpath = "//a[contains(text(), 'Оформить онлайн')]")
+    @FindBy(xpath = "//a[contains(text(), 'РћС„РѕСЂРјРёС‚СЊ РѕРЅР»Р°Р№РЅ')]")
     private WebElement makeOnline;
-    @FindBy(xpath = "//*[contains(text(),'Страхование путешественников')]")
+    @FindBy(xpath = "//*[contains(text(),'РЎС‚СЂР°С…РѕРІР°РЅРёРµ РїСѓС‚РµС€РµСЃС‚РІРµРЅРЅРёРєРѕРІ')]")
     private WebElement title;
 
-    @Step("Нажать на – Страхование")
+    @Step("РќР°Р¶Р°С‚СЊ РЅР° вЂ“ РЎС‚СЂР°С…РѕРІР°РЅРёРµ")
     public void clickMainPage() {
         elemClick(mainPage);
     }
 
-    @Step("Выбрать – Путешествие и покупки")
+    @Step("Р’С‹Р±СЂР°С‚СЊ вЂ“ РџСѓС‚РµС€РµСЃС‚РІРёРµ Рё РїРѕРєСѓРїРєРё")
     public void clickTravel() {
         elemClick(travel);
     }
@@ -32,12 +32,12 @@ public class SberPersonPage extends BasePage {
         elemClick(makeOnline);
     }
 
-    @Step("роверить наличие на странице заголовка – Страхование путешественников")
+    @Step("СЂРѕРІРµСЂРёС‚СЊ РЅР°Р»РёС‡РёРµ РЅР° СЃС‚СЂР°РЅРёС†Рµ Р·Р°РіРѕР»РѕРІРєР° вЂ“ РЎС‚СЂР°С…РѕРІР°РЅРёРµ РїСѓС‚РµС€РµСЃС‚РІРµРЅРЅРёРєРѕРІ")
     public void checkTitle() {
-        Assert.assertEquals("\nНет надписи ", "Страхование путешественников", title.getText());
+        Assert.assertEquals("\nРќРµС‚ РЅР°РґРїРёСЃРё ", "РЎС‚СЂР°С…РѕРІР°РЅРёРµ РїСѓС‚РµС€РµСЃС‚РІРµРЅРЅРёРєРѕРІ", title.getText());
     }
 
-    @Step("Нажать на – Оформить Онлайн")
+    @Step("РќР°Р¶Р°С‚СЊ РЅР° вЂ“ РћС„РѕСЂРјРёС‚СЊ РћРЅР»Р°Р№РЅ")
     public WebElement getMakeOnline() {
         return makeOnline;
     }
