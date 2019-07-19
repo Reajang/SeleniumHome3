@@ -43,12 +43,21 @@ public abstract class BasePage {
         if(text.size() != elemensts.size()) return;
         if(text.isEmpty() || elemensts.isEmpty()) return;
         for(int i = 0; i < text.size(); i++){
-            fillText(DriverManager.waitElem(elemensts.get(i)), text.get(i));
+            WebElement element = DriverManager.waitElem(elemensts.get(i));
+            element.click();
+            fillText(element, text.get(i));
         }
     }
 
     public void assertData(String expect, WebElement element){
         Assert.assertEquals(expect, DriverManager.waitElem(element).getText());
+    }
+
+    public void fillSelect(List<WebElement> elementList, int value){
+        elemClick(elementList.get(value));
+    }
+    public void checkSelect(){
+
     }
 
 }

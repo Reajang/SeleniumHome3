@@ -28,8 +28,8 @@ public class DmsRequestPage  extends BasePage {
     @FindBy(xpath = "//*[text()= 'Предпочитаемая дата контакта']/following::input[1]")
     private WebElement dayToColl;
     @FindBy(xpath = "//*[contains(text(),'Регион')]/following::option")
-    private WebElement region;
-    @FindBy(xpath = "//*[text()= 'Комментарии']/following::input[1]")
+    private List<WebElement> regions;
+    @FindBy(xpath = "//*[@name= 'Comment']")
     private WebElement comments;
     @FindBy(xpath = "//*[contains(text(),'Я согласен')]/preceding-sibling::input")
     private WebElement agree;
@@ -42,13 +42,13 @@ public class DmsRequestPage  extends BasePage {
         return requestFormTitle;
     }
     public void clickAgree(){
-        elemClick(agree);
+        agree.click();
     }
     public void clickSendButton(){
-        elemClick(sendButton);
+        sendButton.click();
     }
     public void checkEmailError(){
-        assertData("Введите адрес электронной почты", emailError);
+        assertData(" Введите адрес электронной почты", emailError);
     }
     public void fillEmail(String string){
         fillText(email, string);
@@ -64,11 +64,20 @@ public class DmsRequestPage  extends BasePage {
         list.add(email);
         list.add(dayToColl);
         list.add(comments);
-        list.add(region);
+
         return list;
     }
     public List<String> getTextToInputs(){
-        return  Arrays.asList("Иван", "Сидоров", "Андреевич", "8005553535", "qwertyqwerty", "19072019", "Комментарий", "1");
+        return  Arrays.asList("Иван", "Сидоров", "Андреевич", "8005553535", "qwertyqwerty", "19072019", "Комментарий");
+    }
+    public List<String> getTextToCheck(){
+        return  Arrays.asList("Иван", "Сидоров", "Андреевич", "+7 (800) 555-35-35", "qwertyqwerty", "19.07.2019", "Комментарий");
     }
 
+    public List<WebElement> getRegions() {
+        return regions;
+    }
+    public void checkFormTitle(){
+        assertData("Заявка на добровольное медицинское страхование", getFormTitleText());
+    }
 }

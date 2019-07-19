@@ -18,9 +18,9 @@ public abstract class DriverManager {
     public static void initialDriver(String url){
         System.setProperty("webdriver.chrome.driver","driver/chromedriver.exe");
         getDriver().get(url);
-        getDriver().manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         getDriver().manage().window().maximize();
-        getDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
     public static WebDriver getDriver(){

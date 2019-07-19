@@ -17,5 +17,8 @@ public class DmsRgsPage extends BasePage {
     public void clickSendRequest(){
         elemClick(sendRequest);
     }
+    public void checkTitle(){
+        assertData("ДМС " + "\u2014" +" добровольное медицинское страхование", getDmsTitle());
+    }
 
 }

@@ -21,17 +21,20 @@ public class RgsTest {
         mainRgsPage.clickDms();
 
         DmsRgsPage dmsRgsPage = new DmsRgsPage();
-        dmsRgsPage.assertData("ДМС " + "\u2014" +" добровольное медицинское страхование", dmsRgsPage.getDmsTitle());
+        dmsRgsPage.checkTitle();
         dmsRgsPage.clickSendRequest();
 
         DmsRequestPage dmsRequestPage = new DmsRequestPage();
-        dmsRequestPage.assertData("Заявка на добровольное медицинское страхование", dmsRequestPage.getFormTitleText());
+        dmsRequestPage.checkFormTitle();
 
         List<WebElement> necessaryFields = dmsRequestPage.getNesesseryElements();
         List<String> textToInput = dmsRequestPage.getTextToInputs();
+        List<String> textToCheck = dmsRequestPage.getTextToCheck();
 
         dmsRequestPage.fillFields(textToInput, necessaryFields);
-        dmsRequestPage.assertData(textToInput, necessaryFields);
+        dmsRequestPage.fillSelect(dmsRequestPage.getRegions(), 1);
+        Assert.assertEquals("77", dmsRequestPage.getRegions().get(1).getAttribute("value"));
+        dmsRequestPage.assertData(textToCheck, necessaryFields);
 
         dmsRequestPage.clickAgree();
         dmsRequestPage.clickSendButton();
