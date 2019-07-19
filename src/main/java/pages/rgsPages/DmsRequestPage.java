@@ -1,5 +1,6 @@
 package pages.rgsPages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
@@ -44,13 +45,16 @@ public class DmsRequestPage  extends BasePage {
     public void clickAgree(){
         agree.click();
     }
+    @Step("Нажать отправить")
     public void clickSendButton(){
         sendButton.click();
     }
+    @Step("Ошибка в email")
     public void checkEmailError(){
         assertData(" Введите адрес электронной почты", emailError);
     }
     public void fillEmail(String string){
+        email.clear();
         fillText(email, string);
     }
 
@@ -77,6 +81,9 @@ public class DmsRequestPage  extends BasePage {
     public List<WebElement> getRegions() {
         return regions;
     }
+    @Step("Проверить, что открылась страница, " +
+            "на которой присутствует текст: " +
+            "Заявка на добровольное медицинское страхование")
     public void checkFormTitle(){
         assertData("Заявка на добровольное медицинское страхование", getFormTitleText());
     }

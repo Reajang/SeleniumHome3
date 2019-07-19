@@ -1,6 +1,7 @@
 package pages;
 
 import io.qameta.allure.Attachment;
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -41,7 +42,7 @@ public abstract class BasePage {
     public byte[] takescreenshot() {
         return ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
     }
-
+    @Step("Проверка заполенные полей")
     public void assertData(List<String> expextedData, List<WebElement> actualElements) {
         if (expextedData.size() != actualElements.size()) return;
         if (expextedData.isEmpty() || actualElements.isEmpty()) return;
@@ -49,7 +50,7 @@ public abstract class BasePage {
             Assert.assertEquals(expextedData.get(i), actualElements.get(i).getAttribute("value"));
         }
     }
-
+@Step("Заполенение полей")
     public void fillFields(List<String> text, List<WebElement> elemensts) {
         if (text.size() != elemensts.size()) return;
         if (text.isEmpty() || elemensts.isEmpty()) return;

@@ -1,3 +1,4 @@
+import io.qameta.allure.Step;
 import org.junit.*;
 import org.openqa.selenium.WebElement;
 import pages.DriverManager;
@@ -9,15 +10,16 @@ import java.util.List;
 
 public class RgsTest {
 
-    /*@BeforeClass
+    @Step("Перейти по сслылке http://www.rgs.ru")
+    @BeforeClass
     public static void initRsg(){
         DriverManager.initialDriver("https://www.rgs.ru");
-    }*/
+    }
 
     @Test
     public void rgsTest(){
 
-        DriverManager.initialDriver("https://www.rgs.ru");
+
 
         MainRgsPage mainRgsPage = new MainRgsPage();
         mainRgsPage.clickInsurance();

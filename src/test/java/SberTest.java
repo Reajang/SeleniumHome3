@@ -23,7 +23,6 @@ public class SberTest {
     @Test
     public void sberTest() {
 
-        DriverManager.initialDriver("http://www.sberbank.ru/ru/person");
 
         SberPersonPage sberPersonPage = new SberPersonPage();
 
@@ -58,10 +57,10 @@ public class SberTest {
 
     }
 
-    /*@Step("Перейти на страницу http://www.sberbank.ru/ru/person")
-    @BeforeClass
-    public static void initWeb() {
+    @Step("Перейти на страницу http://www.sberbank.ru/ru/person")
+    @Before
+    public void initWeb() {
         DriverManager.initialDriver("http://www.sberbank.ru/ru/person");
-    }*/
+    }
 
 }

@@ -1,5 +1,6 @@
 package pages.sberPages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -65,7 +66,7 @@ public class RegistrationPage extends BasePage {
     public WebElement getContinueButton() {
         return continueButton;
     }
-
+    @Step("Нажать продолжить")
     public void clickContinueButton(){
         elemClick(getContinueButton());
     }
@@ -117,6 +118,7 @@ public class RegistrationPage extends BasePage {
     public WebElement getErrorMessage() {
         return errorMessage;
     }
+    @Step("Проверить, что появилось сообщение - Заполнены не все обязательные поля")
     public void assertErrorMessage(){
         Assert.assertEquals("\nНет сообщения","Заполнены не все обязательные поля", getErrorMessage().getText());
     }

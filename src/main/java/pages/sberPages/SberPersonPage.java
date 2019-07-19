@@ -1,5 +1,6 @@
 package pages.sberPages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,19 +18,26 @@ public class SberPersonPage extends BasePage {
     @FindBy(xpath = "//*[contains(text(),'Страхование путешественников')]")
     private WebElement title;
 
-    public void clickMainPage(){
+    @Step("Нажать на – Страхование")
+    public void clickMainPage() {
         elemClick(mainPage);
     }
-    public void clickTravel(){
+
+    @Step("Выбрать – Путешествие и покупки")
+    public void clickTravel() {
         elemClick(travel);
     }
-    public void clickMakeOnline(){
+
+    public void clickMakeOnline() {
         elemClick(makeOnline);
     }
-    public void checkTitle(){
+
+    @Step("роверить наличие на странице заголовка – Страхование путешественников")
+    public void checkTitle() {
         Assert.assertEquals("\nНет надписи ", "Страхование путешественников", title.getText());
     }
 
+    @Step("Нажать на – Оформить Онлайн")
     public WebElement getMakeOnline() {
         return makeOnline;
     }

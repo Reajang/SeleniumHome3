@@ -1,5 +1,6 @@
 package pages.sberPages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
@@ -12,10 +13,13 @@ public class InsuranceTravelersPage extends BasePage {
     @FindBy(xpath = "//span[contains(text(), 'Оформить')]/../..")
     private WebElement issue;
 
-    public void clickButtonBin(){
+    @Step("На вкладке – Выбор полиса  выбрать сумму страховой защиты – Минимальная")
+    public void clickButtonBin() {
         elemClick(buttonMin);
     }
-    public void clickIssue(){
+
+    @Step("Нажать Оформить")
+    public void clickIssue() {
         elemClick(issue);
     }
 
