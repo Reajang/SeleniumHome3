@@ -21,7 +21,7 @@ public class DmsRgsPage extends BasePage {
     }
     @Step("Проверить наличие заголовка -Добровольное медицинское страхование")
     public void checkTitle(){
-        assertData("ДМС " + "\u2014" +" добровольное медицинское страхование", getDmsTitle());
+        assertData("ДМС —"  +" добровольное медицинское страхование", getDmsTitle());
     }
 
 }

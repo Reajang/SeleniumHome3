@@ -85,6 +85,7 @@ public class DmsRequestPage  extends BasePage {
             "на которой присутствует текст: " +
             "Заявка на добровольное медицинское страхование")
     public void checkFormTitle(){
+
         assertData("Заявка на добровольное медицинское страхование", getFormTitleText());
     }
 }

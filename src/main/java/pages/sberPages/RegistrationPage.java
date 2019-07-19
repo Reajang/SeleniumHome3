@@ -57,11 +57,6 @@ public class RegistrationPage extends BasePage {
         list.add(targetPaspDay);
         return list;
     }
-    /*public String nesesseryElementsSequence(){
-        for(WebElement element : getNesesseryElements()){
-            System.out.println(element.);
-        }
-    }*/
 
     public WebElement getContinueButton() {
         return continueButton;
