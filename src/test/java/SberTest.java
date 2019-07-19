@@ -9,20 +9,21 @@ import pages.sberPages.SberPersonPage;
 
 import java.util.List;
 
-public class SberTest{
+public class SberTest {
 
-    @AfterClass
-    public static void afterClass(){
-        DriverManager.getDriver().quit();
-    }
 
-    @After
-    public void afterTest(){
+
+    /*@AfterClass
+    public static void afterTest() {
         DriverManager.closePages();
-    }
+        DriverManager.getDriver().quit();
+    }*/
+
 
     @Test
-    public void sberTest(){
+    public void sberTest() {
+
+        DriverManager.initialDriver("http://www.sberbank.ru/ru/person");
 
         SberPersonPage sberPersonPage = new SberPersonPage();
 
@@ -52,13 +53,15 @@ public class SberTest{
 
         registrationPage.takescreenshot();
 
-
+        DriverManager.closePages();
+        DriverManager.getDriver().quit();
 
     }
+
+    /*@Step("Перейти на страницу http://www.sberbank.ru/ru/person")
     @BeforeClass
-    @Step("Перейти на страницу http://www.sberbank.ru/ru/person")
-    public static void initWeb(){
+    public static void initWeb() {
         DriverManager.initialDriver("http://www.sberbank.ru/ru/person");
-    }
+    }*/
 
 }

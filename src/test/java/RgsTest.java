@@ -9,13 +9,16 @@ import java.util.List;
 
 public class RgsTest {
 
-    @BeforeClass
+    /*@BeforeClass
     public static void initRsg(){
         DriverManager.initialDriver("https://www.rgs.ru");
-    }
+    }*/
 
     @Test
     public void rgsTest(){
+
+        DriverManager.initialDriver("https://www.rgs.ru");
+
         MainRgsPage mainRgsPage = new MainRgsPage();
         mainRgsPage.clickInsurance();
         mainRgsPage.clickDms();
@@ -33,7 +36,7 @@ public class RgsTest {
 
         dmsRequestPage.fillFields(textToInput, necessaryFields);
         dmsRequestPage.fillSelect(dmsRequestPage.getRegions(), 1);
-        Assert.assertEquals("77", dmsRequestPage.getRegions().get(1).getAttribute("value"));
+        Assert.assertEquals("77", dmsRequestPage.getRegions().get(1).getAttribute("value"));//Нужно вынести в отдельный метод
         dmsRequestPage.assertData(textToCheck, necessaryFields);
 
         dmsRequestPage.clickAgree();
@@ -41,14 +44,16 @@ public class RgsTest {
 
         dmsRequestPage.checkEmailError();
         dmsRequestPage.fillEmail("trainee@aplana.ru");
+
+        /*DriverManager.closePages();
+        DriverManager.getDriver().quit();*/
     }
 
-    @After
-    public void after(){
+    /*@AfterClass
+    public static void after(){
+
         DriverManager.closePages();
-    }
-    @AfterClass
-    public static void afterClass(){
         DriverManager.getDriver().quit();
-    }
+    }*/
+
 }

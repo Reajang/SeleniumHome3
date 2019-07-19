@@ -15,6 +15,7 @@ public abstract class DriverManager {
     private static WebDriver driver;
     private static WebDriverWait waiter;
 
+
     public static void initialDriver(String url){
         System.setProperty("webdriver.chrome.driver","driver/chromedriver.exe");
         getDriver().get(url);

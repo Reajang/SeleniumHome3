@@ -39,7 +39,7 @@ public class RegistrationPage extends BasePage {
     private WebElement errorMessage;
 
     public List<String> getTextToInputs(){
-        return  Arrays.asList("Ivan", "Ivanov", "14.05.1994", "Øףכüעצ", "Àםהנוי", "Ïוענמגטק", "12.09.1999", "1234", "567890", "12.10.2013");
+        return  Arrays.asList("Ivan", "Ivanov", "14.05.1994", "Øףכüעצ", "Àםהנוי", "Ïוענמגטק", "28.09.1999", "1234", "567890", "12.10.2013");
     }
 
     public List<WebElement> getNesesseryElements(){
