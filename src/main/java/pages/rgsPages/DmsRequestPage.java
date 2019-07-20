@@ -72,10 +72,10 @@ public class DmsRequestPage  extends BasePage {
         return list;
     }
     public List<String> getTextToInputs(){
-        return  Arrays.asList("Иван", "Сидоров", "Андреевич", "8005553535", "qwertyqwerty", "19072019", "Комментарий");
+        return  Arrays.asList("Иван", "Сидоров", "Андреевич", "8005553535", "qwertyqwerty", "22072019", "Комментарий");
     }
     public List<String> getTextToCheck(){
-        return  Arrays.asList("Иван", "Сидоров", "Андреевич", "+7 (800) 555-35-35", "qwertyqwerty", "19.07.2019", "Комментарий");
+        return  Arrays.asList("Иван", "Сидоров", "Андреевич", "+7 (800) 555-35-35", "qwertyqwerty", "22.07.2019", "Комментарий");
     }
 
     public List<WebElement> getRegions() {
