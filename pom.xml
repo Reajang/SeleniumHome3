@@ -96,7 +96,7 @@
                 <configuration>
                     <propertiesFilePath>${basedir}/src/test/resources/allure.properties</propertiesFilePath>
                     <reportVersion>2.4.0</reportVersion>
-                    <reportDirectory>${basedir}/target/</reportDirectory>
+                    <reportDirectory>${basedir}/target/allure-report</reportDirectory>
                     <resultsDirectory>${basedir}/target/allure-results</resultsDirectory>
                 </configuration>
             </plugin>
